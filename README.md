@@ -12,7 +12,7 @@ This led to the development of a fully automated pipeline that pulls data from T
 
 - [`Insight Report.md`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/Insight%20Report.md) –  Insight Report 
 - [`POWERBI DAX CODE.txt`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/POWERBI%20DAX%20CODE.txt) – Dashboard metrics logic  
-- [`PYTHON SCRIPT.txt`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/Python%20Script.ipynb)) – Data extraction code  
+- [`PYTHON SCRIPT.ipynb`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/Python%20Script.ipynb)) – Data extraction code  
 - [`DASHBOARD.jpg`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/DASHBOARD.jpg) – Visual report image
 
 ---
