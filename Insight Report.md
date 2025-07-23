@@ -23,6 +23,11 @@ This report dissects the performance of TikTok content from February to July usi
 * A strong audience remains post-viral spike, signaling loyal follower potential.
 
 ---
+## Dashboard Overview
+
+![TikTok Dashboard](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/DASHBOARD.jpg?raw=true)
+
+---
 
 ## Month-by-Month Performance Breakdown
 
