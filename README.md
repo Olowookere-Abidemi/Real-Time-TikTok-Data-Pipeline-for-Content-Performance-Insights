@@ -8,6 +8,15 @@ This led to the development of a fully automated pipeline that pulls data from T
 
 ---
 
+## Project Folder & Assets
+
+- [`Insight Report.md`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/Insight%20Report.md) –  Insight Report 
+- [`POWERBI DAX CODE.txt`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/POWERBI%20DAX%20CODE.txt) – Dashboard metrics logic  
+- [`PYTHON SCRIPT.txt`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/PYTHON%20SCRIPT.txt) – Data extraction code  
+- [`DASHBOARD.jpg`](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/DASHBOARD.jpg) – Visual report image
+
+---
+
 ## Technical Stack
 
 | Tool         | Purpose                                          |
@@ -85,6 +94,8 @@ The CSV file is connected to Power BI for rich visualization. Key insights inclu
 * Duration vs Engagement Scatter Plot
 
 Power BI uses DAX formulas, slicers, conditional formatting, and drill-through capabilities to deliver actionable insights.
+
+![TikTok Dashboard](https://github.com/Olowookere-Abidemi/Real-Time-TikTok-Data-Pipeline-for-Content-Performance-Insights/blob/main/DASHBOARD.jpg?raw=true)
 
 ---
 
