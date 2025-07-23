@@ -1,0 +1,172 @@
+TOTAL KPIs
+
+Total Comments = SUM('TIKTOK DATA'[Comments])
+
+Total Engagement = SUM('TIKTOK DATA'[Likes]) + SUM('TIKTOK DATA'[Comments]) + SUM('TIKTOK DATA'[Shares])
+
+Total Likes = SUM('TIKTOK DATA'[Likes])
+
+Total Posts = COUNT('TIKTOK DATA'[Post ID])
+
+Total Shares = SUM('TIKTOK DATA'[Shares])
+
+Total Views = SUM('TIKTOK DATA'[Views])
+
+
+AVERAGES & RATIOS
+
+Average Engagement = 
+AVERAGEX(
+    'TIKTOK DATA',
+    'TIKTOK DATA'[Likes] + 'TIKTOK DATA'[Shares] + 'All Measures'[Total Shares]
+)
+
+Average Playtime = AVERAGE('TIKTOK DATA'[Duration (s)])
+
+Average Views Per Post = AVERAGE('TIKTOK DATA'[Views])
+
+Engagement Per View = [Total Engagement] / [Total Views]
+
+
+MoM PERCENTAGE CHANGE (%)
+
+Avg. Engagement MoM % = 
+VAR PrevMonth = CALCULATE([Average Engagement], DATEADD('DateTable'[Date], -1, MONTH))
+RETURN
+    DIVIDE([Average Engagement] - PrevMonth, PrevMonth)
+
+Avg. Playtime MoM % = 
+VAR PrevMonth = CALCULATE([Average Playtime], DATEADD('DateTable'[Date], -1, MONTH))
+RETURN
+    DIVIDE([Average Playtime] - PrevMonth, PrevMonth)
+
+Avg. View per post MoM % = 
+VAR PrevMonth = CALCULATE([Average Views Per Post], DATEADD('DateTable'[Date], -1, MONTH))
+RETURN
+    DIVIDE([Average Views Per Post] - PrevMonth, PrevMonth)
+
+Likes MoM % = 
+VAR PrevMonth = CALCULATE([Total Likes], DATEADD('DateTable'[Date], -1, MONTH))
+RETURN
+    DIVIDE([Total Likes] - PrevMonth, PrevMonth)
+
+Posts MoM % = 
+VAR PrevMonth = CALCULATE([Total Posts], DATEADD('DateTable'[Date], -1, MONTH))
+RETURN
+    DIVIDE([Total Posts] - PrevMonth, PrevMonth)
+
+Views MoM % = 
+VAR PrevMonth = CALCULATE([Total Views], DATEADD('DateTable'[Date], -1, MONTH))
+RETURN
+    DIVIDE([Total Views] - PrevMonth, PrevMonth)
+
+MoM DISPLAY WITH ARROW
+
+Avg. Engagement MoM Arrow = 
+VAR MoMChange = [Avg. Engagement MoM %]
+VAR Arrow = 
+    SWITCH(
+        TRUE(),
+        MoMChange > 0, "▲ ",
+        MoMChange < 0, "▼ ",
+        "▬ "
+    )
+RETURN
+    IF(
+        ISBLANK(MoMChange),
+        BLANK(),
+        Arrow & FORMAT(MoMChange, "0.0%")
+    )
+
+Avg. Playtime MoM Arrow = 
+VAR MoMChange = [Avg. Playtime MoM %]
+VAR Arrow = 
+    SWITCH(
+        TRUE(),
+        MoMChange > 0, "▲ ",
+        MoMChange < 0, "▼ ",
+        "▬ "
+    )
+RETURN
+    IF(
+        ISBLANK(MoMChange),
+        BLANK(),
+        Arrow & FORMAT(MoMChange, "0.0%")
+    )
+
+Avg. View Per Post MoM Arrow = 
+VAR MoMChange = [Avg. View per post MoM %]
+VAR Arrow = 
+    SWITCH(
+        TRUE(),
+        MoMChange > 0, "▲ ",
+        MoMChange < 0, "▼ ",
+        "▬ "
+    )
+RETURN
+    IF(
+        ISBLANK(MoMChange),
+        BLANK(),
+        Arrow & FORMAT(MoMChange, "0.0%")
+    )
+
+Like MoM Arrow = 
+VAR MoMChange = [Likes MoM %]
+VAR Arrow = 
+    SWITCH(
+        TRUE(),
+        MoMChange > 0, "▲ ",
+        MoMChange < 0, "▼ ",
+        "▬ "
+    )
+RETURN
+    IF(
+        ISBLANK(MoMChange),
+        BLANK(),
+        Arrow & FORMAT(MoMChange, "0.0%")
+    )
+
+Posts MoM Arrow = 
+VAR MoMChange = [Posts MoM %]
+VAR Arrow = 
+    SWITCH(
+        TRUE(),
+        MoMChange > 0, "▲ ",
+        MoMChange < 0, "▼ ",
+        "▬ "
+    )
+RETURN
+    IF(
+        ISBLANK(MoMChange),
+        BLANK(),
+        Arrow & FORMAT(MoMChange, "0.0%")
+    )
+
+Views MoM % Display = 
+VAR MoMChange = [Views MoM %]
+VAR Arrow = 
+    SWITCH(
+        TRUE(),
+        MoMChange > 0, "▲ ",
+        MoMChange < 0, "▼ ",
+        "▬ "
+    )
+RETURN
+    IF(
+        ISBLANK(MoMChange),
+        BLANK(),
+        Arrow & FORMAT(MoMChange, "0.0%")
+    )
+
+
+CONDITIONAL FORMATTING (COLOR CODE)
+
+Posts MoM % Color = 
+VAR MoMChange = [Posts MoM %]
+RETURN
+    SWITCH(
+        TRUE(),
+        MoMChange > 0, "#28A745",   // Green for positive
+        MoMChange < 0, "#DC3545",   // Red for negative
+        "#6C757D"                   // Grey for neutral
+    )
